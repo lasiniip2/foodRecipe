@@ -18,7 +18,6 @@ export default function Navbar() {
       localStorage.removeItem("token")
       localStorage.removeItem("user")
       setIsLogin(true)
-
     }
     else{
       setIsOpen(true)
@@ -28,12 +27,16 @@ export default function Navbar() {
   return (
     <>
         <header>
-            <h2>Food Blog</h2>
+            <h2>Foodish.</h2>
             <ul>
                 <li><NavLink to="/">Home</NavLink></li>
-                <li onClick={()=>isLogin && setIsOpen(true)}><NavLink to={ !isLogin ? "/myRecipe" : "/"}>My Recipe</NavLink></li>
+                <li onClick={()=>isLogin && setIsOpen(true)}><NavLink to={ !isLogin ? "/myRecipe" : "/"}>My Recipes</NavLink></li>
                 <li onClick={()=>isLogin && setIsOpen(true)}><NavLink to={ !isLogin ? "/favRecipe" : "/"}>Favourites</NavLink></li>
-                <li onClick={checkLogin}><p className='login'>{ (isLogin)? "Login": "Logout" }{user?.email ? `(${user?.email})` : ""}</p></li>
+                <li onClick={checkLogin}>
+                  <p className={`login ${isLogin ? 'login-state' : 'logout-state'}`}>
+                    { (isLogin)? "Login": "Logout" }{user?.email ? ` (${user?.email})` : ""}
+                  </p>
+                </li>
             </ul>
         </header>
        { (isOpen) && <Modal onClose={()=>setIsOpen(false)}><InputForm setIsOpen={()=>setIsOpen(false)}/></Modal>}

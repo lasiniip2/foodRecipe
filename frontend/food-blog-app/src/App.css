@@ -103,19 +103,40 @@ header ul li a.active {
   box-shadow: var(--shadow-md);
 }
 
+/* Update the login/logout button styles */
 header ul li .login {
   color: var(--gray-700);
   font-weight: 500;
   cursor: pointer;
-  padding: 0.75rem 1.25rem;
+  padding: 0.60rem 1.1rem;
   border-radius: var(--border-radius-sm);
   transition: var(--transition);
   border: 2px solid var(--primary-green);
   background-color: var(--white);
 }
 
-header ul li .login:hover {
+/* Login state - keep green theme */
+header ul li .login.login-state {
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+}
+
+header ul li .login.login-state:hover {
   background-color: var(--primary-green);
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Logout state - use red theme without border */
+header ul li .login.logout-state {
+  border: none;
+  color: var(--danger);
+  background-color: transparent;
+}
+
+header ul li .login.logout-state:hover {
+  background-color: var(--danger);
   color: var(--white);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
