@@ -35,14 +35,25 @@ export default function RecipeItems() {
         setIsFavRecipe(pre => !pre)
     }
 
+    // Determine container class based on number of recipes
+    const containerClass = 
+        allRecipes?.length === 1 ? 'card-container single-recipe-container' : 
+        allRecipes?.length === 2 ? 'card-container dual-recipe-container' : 
+        'card-container';
+
     return (
         <>
-            <div className='card-container'>
+            <div className={containerClass}>
                 {
                     allRecipes?.map((item, index) => {
                         return (
-                            <div key={index} className='card'onDoubleClick={()=>navigate(`/recipe/${item._id}`)}>
-                                <img src={`http://localhost:5000/images/${item.coverImage}`} width="120px" height="100px"></img>
+                            <div key={index} className='card' onDoubleClick={()=>navigate(`/recipe/${item._id}`)}>
+                                <img 
+                                    src={`http://localhost:5000/images/${item.coverImage}`} 
+                                    width="120px" 
+                                    height="100px"
+                                    onError={(e) => {e.target.src = foodImg}}
+                                />
                                 <div className='card-body'>
                                     <div className='title'>{item.title}</div>
                                     <div className='icons'>
