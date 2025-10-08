@@ -229,13 +229,6 @@ section {
 .home .right img {
   max-width: 100%;
   height: auto;
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-xl);
-  transition: var(--transition);
-}
-
-.home .right img:hover {
-  transform: scale(1.05) rotate(1deg);
 }
 
 /* Background Wave */
@@ -833,7 +826,115 @@ section {
   font-size: 0.8rem;
 }
 
-/* Responsive Design */
+/* Recipe Submission Page Styles */
+.recipe-submission-container {
+  max-width: 1000px;
+  margin: 7rem auto 3rem;
+  padding: 0 2rem;
+}
+
+.submission-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.submission-header h1 {
+  font-size: 2.5rem;
+  color: var(--gray-800);
+  margin-bottom: 1rem;
+}
+
+.submission-header p {
+  color: var(--gray-600);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+  padding: 1.5rem;
+}
+
+.wide-form {
+  max-width: 800px !important;
+  width: 100%;
+  margin: 0 auto;
+  background: var(--white);
+}
+
+.wide-form h2 {
+  text-align: center;
+  color: var(--gray-800);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  position: relative;
+}
+
+.tips-section {
+  background: linear-gradient(135deg, var(--light-green), #e0f2fe);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary-green);
+}
+
+.tips-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gray-800);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.tips-section ul {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.tips-section ul li {
+  position: relative;
+  padding: 0.5rem 0;
+  color: var(--gray-700);
+}
+
+.tips-section ul li::before {
+  content: "✓";
+  color: var(--primary-green);
+  font-weight: bold;
+  position: absolute;
+  left: -1.5rem;
+}
+
+.input-help-text {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  margin-top: -0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.form-note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background-color: var(--gray-50);
+  border-radius: var(--border-radius-sm);
+  margin: 1rem 0;
+  color: var(--gray-700);
+  font-size: 0.9rem;
+}
+
+.form-note svg {
+  color: var(--primary-green);
+}
+
 @media (max-width: 768px) {
   header {
     padding: 1rem;
@@ -903,6 +1004,23 @@ section {
   .footer-links {
     justify-content: center;
   }
+
+  .recipe-submission-container {
+    margin-top: 5rem;
+    padding: 0 1rem;
+  }
+  
+  /* .form-container {
+    padding: 1.5rem;
+  }
+  
+  .wide-form {
+    padding: 1.5rem;
+  } */
+  
+  .submission-header h1 {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -916,10 +1034,6 @@ section {
 
   header ul {
     font-size: 0.9rem;
-  }
-
-  .form {
-    padding: 1.5rem;
   }
   
   .footer-content {
