@@ -645,10 +645,192 @@ section {
 .footer {
   background: linear-gradient(135deg, var(--gray-800), var(--gray-700));
   color: var(--white);
-  text-align: center;
-  padding: 1rem;
   margin-top: auto;
+  padding: 3rem 2rem 1rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-section h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary-green);
+}
+
+.footer-section p {
+  line-height: 1.7;
+  color: var(--gray-300);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-section ul li a {
+  color: var(--gray-300);
+  text-decoration: none;
+  transition: var(--transition);
+  font-weight: 400;
+  font-size: 0.95rem;
+  display: inline-block;
+}
+
+.footer-section ul li a:hover {
+  color: var(--primary-green);
+  transform: translateX(8px);
+}
+
+/* Enhanced Social Links */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  transition: var(--transition);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-links a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent, rgba(255,255,255,0.1));
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.social-links a:hover::before {
+  opacity: 1;
+}
+
+.social-links a svg {
+  transition: var(--transition);
+  z-index: 1;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.social-links a:hover svg {
+  transform: scale(1.1);
+}
+
+/* Individual social media platform colors */
+.social-facebook {
+  background: linear-gradient(135deg, #1877f2, #42a5f5);
+  color: white;
+}
+
+.social-facebook:hover {
+  box-shadow: 0 8px 25px rgba(24, 119, 242, 0.4);
+}
+
+.social-instagram {
+  background: linear-gradient(135deg, #e1306c, #fd1d1d, #fcb045);
+  color: white;
+}
+
+.social-instagram:hover {
+  box-shadow: 0 8px 25px rgba(225, 48, 108, 0.4);
+}
+
+.social-youtube {
+  background: linear-gradient(135deg, #ff0000, #ff4444);
+  color: white;
+}
+
+.social-youtube:hover {
+  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
+}
+
+.social-email {
+  background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+  color: white;
+}
+
+.social-email:hover {
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--gray-600);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-bottom p {
   font-size: 0.9rem;
+  color: var(--gray-300);
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--gray-300);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--primary-green);
+}
+
+.footer-links span {
+  color: var(--gray-500);
+  font-size: 0.8rem;
 }
 
 /* Responsive Design */
@@ -697,6 +879,30 @@ section {
   section {
     padding: 0 1rem;
   }
+
+  .footer {
+    padding: 2rem 1rem 1rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .footer-links {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -714,6 +920,24 @@ section {
 
   .form {
     padding: 1.5rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .footer-links span {
+    display: none;
   }
 }
 
