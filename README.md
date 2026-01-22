@@ -12,8 +12,12 @@ It allows users to upload, explore, and share food recipes while interacting wit
 **Frontend:** React, CSS  
 **Backend:** Node.js, Express.js  
 **Database:** MongoDB  
-**Authentication:** JWT (JSON Web Tokens)
+**Authentication:** JWT (JSON Web Tokens) 
 **Other Tools:** Git, Postman
+
+## Screenshot
+<img width="1919" height="857" alt="image" src="https://github.com/user-attachments/assets/c83857fc-033f-424d-b73c-48d62fd2004e" />
+
 
 ### Completed by Lasini Pallewaththa
 
